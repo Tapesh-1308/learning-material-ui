@@ -1,38 +1,48 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import { Typography } from "@mui/material";
-import "./App.css";
+import { Typography, Button, TextField } from "@mui/material";
 
 function App() {
-	const [count, setCount] = useState(0);
-
 	return (
-		<>
-			<div>
-				<a href="https://vitejs.dev" target="_blank">
-					<img src={viteLogo} className="logo" alt="Vite logo" />
-				</a>
-				<a href="https://react.dev" target="_blank">
-					<img src={reactLogo} className="logo react" alt="React logo" />
-				</a>
-			</div>
-			<h1>Vite + React</h1>
-			<Typography variant="inherit"  component="div">
-				Vite + React
+		<div>
+			{/* Typography */}
+			<Typography variant="h1" component="div">
+				Vite + React + MUI
 			</Typography>
-			<div className="card">
-				<button onClick={() => setCount((count) => count + 1)}>
-					count is {count}
-				</button>
-				<p>
-					Edit <code>src/App.jsx</code> and save to test HMR
-				</p>
-			</div>
-			<p className="read-the-docs">
-				Click on the Vite and React logos to learn more
-			</p>
-		</>
+			{/* Button */}
+			<Button
+				sx={{ margin: 3 }}
+				color="secondary"
+				variant="contained"
+				disableElevation
+				disableRipple
+				endIcon={<p>Icon</p>}
+			>
+				Contained
+			</Button>
+			<Button
+				sx={{ margin: 3 }}
+				size="large"
+				color="success"
+				variant="outlined"
+			>
+				Outlined
+			</Button>
+			<Button sx={{ margin: 3 }} color="error" variant="text" disabled>
+				Text
+			</Button>
+
+			{/* Input */}
+
+			<TextField type="text" placeholder="Name" variant="filled" />
+			<TextField
+				type="email"
+				placeholder="email"
+				variant="outlined"
+				color="secondary"
+			/>
+			<TextField type="password" placeholder="password" variant="standard" />
+			
+			<TextField type="password" placeholder="password" variant="standard" />
+		</div>
 	);
 }
 
